@@ -1,0 +1,23 @@
+version: '2'
+services:
+  wordpress:
+    image: wordpress
+    environment:
+      WORDPRESS_DB_PASSWORD: synerzip
+    stdin_open: true
+    tty: true
+    links:
+    - mysql:db
+    ports:
+    - 8080:80/tcp
+    labels:
+      io.rancher.container.pull_image: always
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: synerzip
+      MYSQL_DATABASE: wordpress
+    stdin_open: true
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always

@@ -1,0 +1,12 @@
+.catalog:
+  name: Sunil WordPress
+  version: 007
+  description: Rancher Wordpress demo
+  uuid: # Unique identifier to be used for upgrades. Please see note.
+  minimum_rancher_version: v1.3.1
+  questions: #Used to request user input for configuration options
+wordpress:
+  scale: 1
+mysql:
+  scale: 1
+
