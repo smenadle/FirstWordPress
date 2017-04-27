@@ -5,6 +5,16 @@
   uuid: # Unique identifier to be used for upgrades. Please see note.
   minimum_rancher_version: v1.3.1
   questions: #Used to request user input for configuration options
+    - variable: "MYSQL_ROOT_PASSWORD"
+      description: "Root Password"
+      label: "MYSQL Root password:"
+      required: true
+      type: "string"
+    - variable: "MYSQL_DATABASE"
+      description: "Database name"
+      label: "MYSQL DB:"
+      required: true
+      type: "string"
 wordpress:
   scale: 1
 mysql:

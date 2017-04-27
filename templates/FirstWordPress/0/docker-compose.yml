@@ -3,7 +3,7 @@ services:
   wordpress:
     image: wordpress
     environment:
-      WORDPRESS_DB_PASSWORD: synerzip
+      WORDPRESS_DB_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     stdin_open: true
     tty: true
     links:
@@ -15,8 +15,8 @@ services:
   mysql:
     image: mysql:5.7
     environment:
-      MYSQL_ROOT_PASSWORD: synerzip
-      MYSQL_DATABASE: wordpress
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
     stdin_open: true
     tty: true
     labels:
